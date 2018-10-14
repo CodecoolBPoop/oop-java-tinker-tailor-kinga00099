@@ -1,10 +1,9 @@
 package com.codecool.tinker;
 
 import java.util.ArrayList;
-import java.util.List;
 
 class Tinker {
-    private ArrayList fillListWithNumbers(int n, int k) {
+    private ArrayList fillListWithNumbers(int n) {
         ArrayList<Integer> listOfNumbers = new ArrayList<>(n);
         for (int i = 1; i < n + 1; i++) {
             listOfNumbers.add(i);
@@ -13,7 +12,7 @@ class Tinker {
     }
 
     int calculateWinner(int n, int k) {
-        ArrayList numbers = fillListWithNumbers(n, k);
+        ArrayList numbers = fillListWithNumbers(n);
         int elemToRemove = 0;
         while (numbers.size() != 1) {
             elemToRemove = (elemToRemove + k - 1) % numbers.size();
